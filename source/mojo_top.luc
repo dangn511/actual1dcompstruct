@@ -35,11 +35,14 @@ module mojo_top (
   .clk(clk) {
     reset_conditioner reset_cond;
     .rst(rst) {
-      fsm state = {IDLE, TESTCASE1, TESTCASE2, TESTCASE3, TESTCASE4, TESTCASE5, TESTCASE6, TESTCASE7, TESTCASE8, TESTCASE9, TESTCASE10};
+      fsm state = {BEGIN, IDLE, TESTCASE1, TESTCASE2, TESTCASE3, TESTCASE4, TESTCASE5, TESTCASE6, TESTCASE7, TESTCASE8, TESTCASE9, TESTCASE10};
       multi_seven_seg seg;
       stateCounter sc;
       
+      
     }
+    dff val[8];
+    random_gen rng;
   }
   
   sig a[16];
@@ -64,16 +67,31 @@ module mojo_top (
     io_seg = ~seg.seg; // connecting the segments to the driver
     io_sel = ~seg.sel; // connecting the digit select to the driver
     
-    a = 16h15;  
-    b = 8h15;
+    a = 16b0000100000000000;  
+    b = 8h0;
 
     io_led[2:1] = c{{a[15:8]},{a[7:0]}}; 
-    io_led[0] = c{b[7:0]};
+    io_led[0] = val.q[7:0];
     
-    myCounter = sc.inc_state2;
+    val.d = 0;
+    
+    
+    if (io_dip[0][0] == 0 && io_dip[0][1] == 0) { //0-0 = easy
+      myCounter = sc.inc_state1;
+    } else if (io_dip[0][0] == 0 && io_dip[0][1] == 1) {//0-1 == med
+      myCounter = sc.inc_state2;
+    } else if (io_dip[0][0] == 1 && io_dip[0][1] == 1) { //1-0 = hard
+      myCounter = sc.inc_state3;
+    } else {
+      myCounter = sc.inc_state2;
+    }
     
    
     case (state.q) {
+      state.BEGIN:
+        if (io_button[1]) {
+          state.d = state.IDLE;
+        }
       
       
       // Idle state is the default state. 
@@ -83,9 +101,12 @@ module mojo_top (
       state.IDLE:
         
         a = 16b0000010000000000;
-        if (myCounter == 1)
+        //if (myCounter == 1)
+        if (rng.num < 16h1)
         {
           state.d = state.TESTCASE1;
+        } else {
+          state.d = state.IDLE;
         }
         
       
@@ -172,12 +193,14 @@ module mojo_top (
         }
         state.TESTCASE10:
         a = 16b0000001000000000;
+        b = b+1;
+        val.d = val.q + 1;
         if (myCounter == 1)
         {
-          state.d = state.TESTCASE1;
+          state.d = state.BEGIN;
         }
       }
     io_led[2:1] = c{{a[15:8]},{a[7:0]}}; 
-    io_led[0] = c{b[7:0]};
+    io_led[0] = c{val.q[7:0]};
     }
 }

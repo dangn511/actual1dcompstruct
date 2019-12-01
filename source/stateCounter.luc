@@ -12,27 +12,27 @@ module stateCounter (
   ) {
   
   //connecting the reset signal to the counter,providing a reset function to the counter.
-  dff stateCounter1[22](.clk(clk),.rst(rst));
-  dff stateCounter2[21](.clk(clk),.rst(rst));
-  dff stateCounter3[20](.clk(clk),.rst(rst));
+  dff stateCounter1[23](.clk(clk),.rst(rst));
+  dff stateCounter2[22](.clk(clk),.rst(rst));
+  dff stateCounter3[21](.clk(clk),.rst(rst));
   
   always {
-    inc_state1 = stateCounter1.q[21]; 
+    inc_state1 = stateCounter1.q[22]; 
     stateCounter1.d = stateCounter1.q + 1;
-    if (stateCounter1.q[21] == 1) {
-      stateCounter1.d[21] = 0;
+    if (stateCounter1.q[22] == 1) {
+      stateCounter1.d[22] = 0;
     } 
     
-    inc_state2 = stateCounter2.q[20]; 
+    inc_state2 = stateCounter2.q[21]; 
     stateCounter2.d = stateCounter2.q + 1;
-    if (stateCounter2.q[20] == 1) {
-      stateCounter2.d[20] = 0;
+    if (stateCounter2.q[21] == 1) {
+      stateCounter2.d[21] = 0;
     }
     
-    inc_state3 = stateCounter3.q[19]; 
+    inc_state3 = stateCounter3.q[20]; 
     stateCounter3.d = stateCounter3.q + 1;
-    if (stateCounter3.q[19] == 1) {
-      stateCounter3.d[19] = 0;
+    if (stateCounter3.q[20] == 1) {
+      stateCounter3.d[20] = 0;
     }
     
   }

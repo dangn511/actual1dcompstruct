@@ -1,0 +1,29 @@
+module shifter (
+    input a[16],                     
+    input b[16],
+    input alufn[6],
+    output sout[16]
+  ) {
+  
+  multiply mul;                   //use multiply
+  
+  always {
+    mul.a = a[7:0];               //inputs for multiply
+    mul.b = b[7:0];
+    case(alufn[1:0]){   
+      default:
+        sout = a;    
+      b00:                   //alufn 00, SHL
+        sout = a << b[3:0];
+        
+      b01:                   //alufn 01, SHR
+        sout = a >> b[3:0];
+        
+      b11:                   //alufn 11, SRA
+        sout = $signed(a)>>>b[3:0];
+        
+      b10:
+        sout = mul.mul;    //alufn 10, no shift
+    }
+  }
+}
