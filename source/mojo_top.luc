@@ -1,0 +1,183 @@
+//this file defines a finite state machine to operate auto test on the full adder.
+//it also define mothods for manually test
+module mojo_top (
+    input clk,              // 50MHz clock input
+    input rst_n,            // reset button (at an active low)
+    output led [8],         // eight different user controllable LEDs
+    output avr_rx,          // AVR RX (FPGA TX)
+    input avr_rx_busy,      // AVR RX buffer full
+    output spi_miso,        // AVR SPI MISO
+    input spi_ss,           // AVR SPI Slave Select
+    input spi_mosi,         // AVR SPI MOSI
+    input cclk,             // configuration clock, AVR ready when high
+    input spi_sck,          // AVR SPI Clock
+    output spi_channel [4], // AVR general purpose pins (used by default to select ADC channel)
+    input avr_tx,           // AVR TX (FPGA RX)
+    
+   
+    
+    output io_led [3][8],   // LEDs on IO Shield
+    output io_seg [8],      // 7-segment LEDs on IO Shield
+    output io_sel [4],      // Digit select on IO Shield
+    input io_button [5],    // 5 buttons on IO Shield
+    input io_dip [3][8],     // DIP switches on IO Shield
+    
+    // Inputs and outputs are defined here. Outputs: a, b, and cin. Inputs: sum and cout.
+    // pins are defined in constraints file custom.ucf
+   
+    input sum,
+    input cout    
+    
+  ) { 
+   
+  sig rst;                  // a reset signal
+  
+  .clk(clk) {
+    reset_conditioner reset_cond;
+    .rst(rst) {
+      fsm state = {IDLE, TESTCASE1, TESTCASE2, TESTCASE3, TESTCASE4, TESTCASE5, TESTCASE6, TESTCASE7, TESTCASE8, TESTCASE9, TESTCASE10};
+      multi_seven_seg seg;
+      stateCounter sc;
+      
+    }
+  }
+  
+  sig a[16];
+  sig b[8];
+  sig myCounter[1];
+  
+  always {
+  
+    reset_cond.in = ~rst_n;   // inputting a raw inverted reset signal
+    rst = reset_cond.out;     // conditioned reset
+    spi_channel = bzzzz;      // not using flags
+    avr_rx = bz; 
+    
+    led = c{3b0, io_button};  // connect buttons to LEDs
+    
+    spi_miso = bz;            // not using SPI
+                 // not using serial port
+    
+    // by default,segments will display:0000
+    seg.values = {4h0, 4h0, 4h0, 4h0};
+    
+    io_seg = ~seg.seg; // connecting the segments to the driver
+    io_sel = ~seg.sel; // connecting the digit select to the driver
+    
+    a = 16h15;  
+    b = 8h15;
+
+    io_led[2:1] = c{{a[15:8]},{a[7:0]}}; 
+    io_led[0] = c{b[7:0]};
+    
+    myCounter = sc.inc_state2;
+    
+   
+    case (state.q) {
+      
+      
+      // Idle state is the default state. 
+      // Once the center button is pressed, the states machine begins the cycle, starting the test cases at state TEST1.
+      // Explanation of the states is included only in TEST1, as all of the states are similar.
+      
+      state.IDLE:
+        
+        a = 16b0000010000000000;
+        if (myCounter == 1)
+        {
+          state.d = state.TESTCASE1;
+        }
+        
+      
+      // TEST CASE 1 : 000
+      state.TESTCASE1:
+      
+        a = 16b0000000000000001;
+        if (myCounter == 1)
+        {
+          state.d = state.TESTCASE2;
+        }
+           
+        // pushing the reset button will reset the state to its default state(idle state) 
+        
+        if (rst_n == 0) {
+          state.d = state.IDLE;
+        }
+
+   
+      // TEST CASE 2: score2
+      state.TESTCASE2:
+        a = 16b0000000000000010;
+        if (myCounter == 1)
+        {
+          state.d = state.TESTCASE3;
+        }
+        
+      // TEST CASE 3: 010
+      state.TESTCASE3:
+        a = 16b0000000000000100;
+        if (myCounter == 1)
+        {
+          state.d = state.TESTCASE4;
+        }
+        
+      // TEST CSE 4: 011 
+      state.TESTCASE4:
+        a = 16b0000000000001000;
+        if (myCounter == 1)
+        {
+          state.d = state.TESTCASE5;
+        }
+     
+      // TEST CASE 5: 100
+      state.TESTCASE5:
+        a = 16b0000000000010000;
+        if (myCounter == 1)
+        {
+          state.d = state.TESTCASE6;
+        }
+        
+       
+        
+     
+      // TEST CASE 6: 101
+      state.TESTCASE6:
+       a = 16b0000000000100000;
+        if (myCounter == 1)
+        {
+          state.d = state.TESTCASE7;
+        }
+        
+      // TEST CASE 7: 110
+      state.TESTCASE7:
+        a = 16b0000000001000000;
+        if (myCounter == 1)
+        {
+          state.d = state.TESTCASE8;
+        }
+        
+      // TEST CASE 8: 111
+      state.TESTCASE8:
+        a = 16b0000000010000000;
+        if (myCounter== 1)
+        {
+          state.d = state.TESTCASE9;
+        }
+      
+       state.TESTCASE9:
+        a = 16b0000000100000000;
+        if (myCounter == 1)
+        {
+          state.d = state.TESTCASE10;
+        }
+        state.TESTCASE10:
+        a = 16b0000001000000000;
+        if (myCounter == 1)
+        {
+          state.d = state.TESTCASE1;
+        }
+      }
+    io_led[2:1] = c{{a[15:8]},{a[7:0]}}; 
+    io_led[0] = c{b[7:0]};
+    }
+}
