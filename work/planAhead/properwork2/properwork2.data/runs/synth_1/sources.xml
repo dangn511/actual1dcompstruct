@@ -2,10 +2,28 @@
 <DARoots Version="1" Minor="26">
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/imports/verilog/multiply_13.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../verilog/multiply_13.v"/>
+        <Attr Name="ImportTime" Val="1575409348"/>
+        <Attr Name="UsedInSynthesis" Val="1"/>
+        <Attr Name="UsedInImplementation" Val="1"/>
+        <Attr Name="UsedInSimulation" Val="1"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/verilog/shifter_12.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../verilog/shifter_12.v"/>
+        <Attr Name="ImportTime" Val="1575409348"/>
+        <Attr Name="UsedInSynthesis" Val="1"/>
+        <Attr Name="UsedInImplementation" Val="1"/>
+        <Attr Name="UsedInSimulation" Val="1"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/imports/verilog/seven_seg_6.v">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../../verilog/seven_seg_6.v"/>
-        <Attr Name="ImportTime" Val="1575227195"/>
+        <Attr Name="ImportTime" Val="1575409348"/>
         <Attr Name="UsedInSynthesis" Val="1"/>
         <Attr Name="UsedInImplementation" Val="1"/>
         <Attr Name="UsedInSimulation" Val="1"/>
@@ -14,16 +32,43 @@
     <File Path="$PSRCDIR/sources_1/imports/verilog/decoder_7.v">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../../verilog/decoder_7.v"/>
-        <Attr Name="ImportTime" Val="1575227195"/>
+        <Attr Name="ImportTime" Val="1575409348"/>
         <Attr Name="UsedInSynthesis" Val="1"/>
         <Attr Name="UsedInImplementation" Val="1"/>
         <Attr Name="UsedInSimulation" Val="1"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/verilog/counter_5.v">
+    <File Path="$PSRCDIR/sources_1/imports/verilog/counter_8.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../verilog/counter_5.v"/>
-        <Attr Name="ImportTime" Val="1575227195"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../verilog/counter_8.v"/>
+        <Attr Name="ImportTime" Val="1575409348"/>
+        <Attr Name="UsedInSynthesis" Val="1"/>
+        <Attr Name="UsedInImplementation" Val="1"/>
+        <Attr Name="UsedInSimulation" Val="1"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/verilog/compare_10.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../verilog/compare_10.v"/>
+        <Attr Name="ImportTime" Val="1575409348"/>
+        <Attr Name="UsedInSynthesis" Val="1"/>
+        <Attr Name="UsedInImplementation" Val="1"/>
+        <Attr Name="UsedInSimulation" Val="1"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/verilog/boolean_11.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../verilog/boolean_11.v"/>
+        <Attr Name="ImportTime" Val="1575409348"/>
+        <Attr Name="UsedInSynthesis" Val="1"/>
+        <Attr Name="UsedInImplementation" Val="1"/>
+        <Attr Name="UsedInSimulation" Val="1"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/verilog/adder_9.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../verilog/adder_9.v"/>
+        <Attr Name="ImportTime" Val="1575409348"/>
         <Attr Name="UsedInSynthesis" Val="1"/>
         <Attr Name="UsedInImplementation" Val="1"/>
         <Attr Name="UsedInSimulation" Val="1"/>
@@ -32,7 +77,7 @@
     <File Path="$PSRCDIR/sources_1/imports/verilog/stateCounter_3.v">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../../verilog/stateCounter_3.v"/>
-        <Attr Name="ImportTime" Val="1575227195"/>
+        <Attr Name="ImportTime" Val="1575409348"/>
         <Attr Name="UsedInSynthesis" Val="1"/>
         <Attr Name="UsedInImplementation" Val="1"/>
         <Attr Name="UsedInSimulation" Val="1"/>
@@ -41,7 +86,7 @@
     <File Path="$PSRCDIR/sources_1/imports/verilog/reset_conditioner_1.v">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../../verilog/reset_conditioner_1.v"/>
-        <Attr Name="ImportTime" Val="1575227195"/>
+        <Attr Name="ImportTime" Val="1575409348"/>
         <Attr Name="UsedInSynthesis" Val="1"/>
         <Attr Name="UsedInImplementation" Val="1"/>
         <Attr Name="UsedInSimulation" Val="1"/>
@@ -50,7 +95,7 @@
     <File Path="$PSRCDIR/sources_1/imports/verilog/random_gen_4.v">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../../verilog/random_gen_4.v"/>
-        <Attr Name="ImportTime" Val="1575227195"/>
+        <Attr Name="ImportTime" Val="1575409348"/>
         <Attr Name="UsedInSynthesis" Val="1"/>
         <Attr Name="UsedInImplementation" Val="1"/>
         <Attr Name="UsedInSimulation" Val="1"/>
@@ -59,7 +104,16 @@
     <File Path="$PSRCDIR/sources_1/imports/verilog/multi_seven_seg_2.v">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../../verilog/multi_seven_seg_2.v"/>
-        <Attr Name="ImportTime" Val="1575227195"/>
+        <Attr Name="ImportTime" Val="1575409348"/>
+        <Attr Name="UsedInSynthesis" Val="1"/>
+        <Attr Name="UsedInImplementation" Val="1"/>
+        <Attr Name="UsedInSimulation" Val="1"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/verilog/alu_5.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../verilog/alu_5.v"/>
+        <Attr Name="ImportTime" Val="1575409348"/>
         <Attr Name="UsedInSynthesis" Val="1"/>
         <Attr Name="UsedInImplementation" Val="1"/>
         <Attr Name="UsedInSimulation" Val="1"/>
@@ -68,7 +122,7 @@
     <File Path="$PSRCDIR/sources_1/imports/verilog/mojo_top_0.v">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../../verilog/mojo_top_0.v"/>
-        <Attr Name="ImportTime" Val="1575227195"/>
+        <Attr Name="ImportTime" Val="1575409348"/>
         <Attr Name="UsedInSynthesis" Val="1"/>
         <Attr Name="UsedInImplementation" Val="1"/>
         <Attr Name="UsedInSimulation" Val="1"/>

@@ -6,7 +6,7 @@
 
 /*
    Parameters:
-     WIDTH = DIGIT_BITS
+     WIDTH = 2
 */
 module decoder_7 (
     input [1:0] in,

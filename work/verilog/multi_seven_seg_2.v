@@ -7,7 +7,7 @@
 /*
    Parameters:
      DIGITS = 4
-     DIV = 16
+     TIME = 18
 */
 module multi_seven_seg_2 (
     input clk,
@@ -18,17 +18,8 @@ module multi_seven_seg_2 (
   );
   
   localparam DIGITS = 3'h4;
-  localparam DIV = 5'h10;
+  localparam TIME = 5'h12;
   
-  
-  localparam DIGIT_BITS = 2'h2;
-  
-  wire [2-1:0] M_ctr_value;
-  counter_5 ctr (
-    .clk(clk),
-    .rst(rst),
-    .value(M_ctr_value)
-  );
   
   wire [7-1:0] M_seg_dec_segs;
   reg [4-1:0] M_seg_dec_char;
@@ -37,17 +28,48 @@ module multi_seven_seg_2 (
     .segs(M_seg_dec_segs)
   );
   
-  wire [4-1:0] M_digit_dec_out;
-  reg [2-1:0] M_digit_dec_in;
-  decoder_7 digit_dec (
-    .in(M_digit_dec_in),
-    .out(M_digit_dec_out)
+  wire [4-1:0] M_decode_out;
+  reg [2-1:0] M_decode_in;
+  decoder_7 decode (
+    .in(M_decode_in),
+    .out(M_decode_out)
   );
   
+  wire [18-1:0] M_c_value;
+  counter_8 c (
+    .clk(clk),
+    .rst(rst),
+    .value(M_c_value)
+  );
+  reg [1:0] M_sel_val_d, M_sel_val_q = 1'h0;
+  reg [3:0] M_sel_out_d, M_sel_out_q = 1'h0;
+  
   always @* begin
-    M_seg_dec_char = values[(M_ctr_value)*4+3-:4];
+    M_sel_out_d = M_sel_out_q;
+    M_sel_val_d = M_sel_val_q;
+    
+    M_seg_dec_char = values[(M_sel_val_q)*4+3-:4];
     seg = M_seg_dec_segs;
-    M_digit_dec_in = M_ctr_value;
-    sel = M_digit_dec_out;
+    M_decode_in = M_sel_val_q;
+    M_sel_out_d = M_decode_out;
+    sel = M_sel_out_q;
+    if ((&M_c_value)) begin
+      if (M_sel_val_q == 3'h4) begin
+        M_sel_val_d = 1'h0;
+      end else begin
+        M_sel_val_d = M_sel_val_q + 1'h1;
+      end
+    end
   end
+  
+  always @(posedge clk) begin
+    if (rst == 1'b1) begin
+      M_sel_val_q <= 1'h0;
+      M_sel_out_q <= 1'h0;
+    end else begin
+      M_sel_val_q <= M_sel_val_d;
+      M_sel_out_q <= M_sel_out_d;
+    end
+  end
+  
 endmodule

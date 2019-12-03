@@ -44,18 +44,18 @@ module stateCounter_3 (
   
   always @(posedge clk) begin
     if (rst == 1'b1) begin
-      M_stateCounter2_q <= 1'h0;
+      M_stateCounter1_q <= 1'h0;
     end else begin
-      M_stateCounter2_q <= M_stateCounter2_d;
+      M_stateCounter1_q <= M_stateCounter1_d;
     end
   end
   
   
   always @(posedge clk) begin
     if (rst == 1'b1) begin
-      M_stateCounter1_q <= 1'h0;
+      M_stateCounter2_q <= 1'h0;
     end else begin
-      M_stateCounter1_q <= M_stateCounter1_d;
+      M_stateCounter2_q <= M_stateCounter2_d;
     end
   end
   

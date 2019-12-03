@@ -1,29 +1,38 @@
 module multi_seven_seg #(
     DIGITS = 4 : DIGITS > 0,
-    DIV = 16 : DIV >= 0
+    TIME = 18 : TIME > 0
   )(
-    input clk,                // clock input
-    input rst,                // reset input
+    input clk,                // clock
+    input rst,                // reset
     input values [DIGITS][4], // values to show
-    output seg [7],           // LED segments [7]
-    output sel [DIGITS]       // Digit selector 
+    output seg [7],           // LED segments
+    output sel [DIGITS]       // Digit select
+    
   ) {
   
+  seven_seg seg_dec;                      // segment decoder
+  decoder decode(#WIDTH(2));
   
-  const DIGIT_BITS = $clog2(DIGITS);
-  // bits required to store digit 1
   .clk(clk), .rst(rst) {
-    counter ctr (#DIV(DIV), #SIZE(DIGIT_BITS), #TOP(DIGITS-1)); 
+    counter c(#SIZE(TIME));
+    dff sel_val[2];  // index of values to output
+    dff sel_out[4];
   }
   
-  seven_seg seg_dec;                      // seven_seg segment decoder
-  decoder digit_dec (#WIDTH(DIGIT_BITS)); // digit decoder
-  
   always {
-    seg_dec.char = values[ctr.value];     // selecting the value for the active digit
+    seg_dec.char = values[sel_val.q];     // select the value for the active digit
     seg = seg_dec.segs;                   // output the decoded value
     
-    digit_dec.in = ctr.value;             // decode active digit to one-hot
-    sel = digit_dec.out;                  // output the active digit
+    decode.in = sel_val.q;
+    sel_out.d = decode.out;
+    sel = sel_out.q;                  // output the active digit
+    
+    if (&c.value) {
+      if (sel_val.q == DIGITS) {
+        sel_val.d = 0;
+      } else {
+        sel_val.d = sel_val.q + 1;
+      }
+    }
   }
 }
