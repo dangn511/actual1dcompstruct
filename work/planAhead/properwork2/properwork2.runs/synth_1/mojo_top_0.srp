@@ -113,9 +113,9 @@ Elaborating module <boolean_11>.
 Elaborating module <shifter_12>.
 
 Elaborating module <multiply_13>.
-WARNING:HDLCompiler:1127 - "C:/Users/User/Documents/1d compstruct/properwork2/work/planAhead/properwork2/properwork2.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 110: Assignment to M_alumod_z ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:/Users/User/Documents/1d compstruct/properwork2/work/planAhead/properwork2/properwork2.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 111: Assignment to M_alumod_v ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:/Users/User/Documents/1d compstruct/properwork2/work/planAhead/properwork2/properwork2.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 112: Assignment to M_alumod_n ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:/Users/User/Documents/1d compstruct/properwork2/work/planAhead/properwork2/properwork2.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 111: Assignment to M_alumod_z ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:/Users/User/Documents/1d compstruct/properwork2/work/planAhead/properwork2/properwork2.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 112: Assignment to M_alumod_v ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:/Users/User/Documents/1d compstruct/properwork2/work/planAhead/properwork2/properwork2.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 113: Assignment to M_alumod_n ignored, since the identifier is never used
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -132,9 +132,9 @@ WARNING:Xst:647 - Input <spi_sck> is never used. This port will be preserved and
 WARNING:Xst:647 - Input <avr_tx> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <sum> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <cout> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-INFO:Xst:3210 - "C:/Users/User/Documents/1d compstruct/properwork2/work/planAhead/properwork2/properwork2.srcs/sources_1/imports/verilog/mojo_top_0.v" line 105: Output port <z> of the instance <alumod> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:/Users/User/Documents/1d compstruct/properwork2/work/planAhead/properwork2/properwork2.srcs/sources_1/imports/verilog/mojo_top_0.v" line 105: Output port <v> of the instance <alumod> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:/Users/User/Documents/1d compstruct/properwork2/work/planAhead/properwork2/properwork2.srcs/sources_1/imports/verilog/mojo_top_0.v" line 105: Output port <n> of the instance <alumod> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Users/User/Documents/1d compstruct/properwork2/work/planAhead/properwork2/properwork2.srcs/sources_1/imports/verilog/mojo_top_0.v" line 106: Output port <z> of the instance <alumod> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Users/User/Documents/1d compstruct/properwork2/work/planAhead/properwork2/properwork2.srcs/sources_1/imports/verilog/mojo_top_0.v" line 106: Output port <v> of the instance <alumod> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Users/User/Documents/1d compstruct/properwork2/work/planAhead/properwork2/properwork2.srcs/sources_1/imports/verilog/mojo_top_0.v" line 106: Output port <n> of the instance <alumod> is unconnected or connected to loadless signal.
     Found 4-bit register for signal <M_digit1_q>.
     Found 4-bit register for signal <M_digit2_q>.
     Found 16-bit register for signal <M_scoref_q>.
@@ -144,9 +144,9 @@ INFO:Xst:3210 - "C:/Users/User/Documents/1d compstruct/properwork2/work/planAhea
     Found finite state machine <FSM_0> for signal <M_state_q>.
     -----------------------------------------------------------------------
     | States             | 15                                             |
-    | Transitions        | 42                                             |
-    | Inputs             | 7                                              |
-    | Outputs            | 20                                             |
+    | Transitions        | 44                                             |
+    | Inputs             | 8                                              |
+    | Outputs            | 17                                             |
     | Clock              | clk (rising_edge)                              |
     | Reset              | M_reset_cond_out (positive)                    |
     | Reset type         | synchronous                                    |
@@ -155,21 +155,21 @@ INFO:Xst:3210 - "C:/Users/User/Documents/1d compstruct/properwork2/work/planAhea
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 16-bit adder for signal <M_rngCounter_q[15]_GND_1_o_add_165_OUT> created at line 424.
-    Found 16-bit adder for signal <M_val_q[15]_GND_1_o_add_262_OUT> created at line 577.
-    Found 16-bit 14-to-1 multiplexer for signal <M_alumod_b> created at line 407.
-    Found 1-bit tristate buffer for signal <spi_channel<3>> created at line 115
-    Found 1-bit tristate buffer for signal <spi_channel<2>> created at line 115
-    Found 1-bit tristate buffer for signal <spi_channel<1>> created at line 115
-    Found 1-bit tristate buffer for signal <spi_channel<0>> created at line 115
-    Found 1-bit tristate buffer for signal <avr_rx> created at line 115
-    Found 1-bit tristate buffer for signal <spi_miso> created at line 115
-    Found 16-bit comparator greater for signal <M_rng_num[15]_GND_1_o_LessThan_165_o> created at line 423
+    Found 16-bit adder for signal <M_rngCounter_q[15]_GND_1_o_add_166_OUT> created at line 425.
+    Found 16-bit adder for signal <M_val_q[15]_GND_1_o_add_263_OUT> created at line 578.
+    Found 16-bit 14-to-1 multiplexer for signal <M_alumod_b> created at line 408.
+    Found 1-bit tristate buffer for signal <spi_channel<3>> created at line 116
+    Found 1-bit tristate buffer for signal <spi_channel<2>> created at line 116
+    Found 1-bit tristate buffer for signal <spi_channel<1>> created at line 116
+    Found 1-bit tristate buffer for signal <spi_channel<0>> created at line 116
+    Found 1-bit tristate buffer for signal <avr_rx> created at line 116
+    Found 1-bit tristate buffer for signal <spi_miso> created at line 116
+    Found 16-bit comparator greater for signal <M_rng_num[15]_GND_1_o_LessThan_166_o> created at line 424
     Summary:
 	inferred   2 Adder/Subtractor(s).
 	inferred  56 D-type flip-flop(s).
 	inferred   1 Comparator(s).
-	inferred  53 Multiplexer(s).
+	inferred  57 Multiplexer(s).
 	inferred   6 Tristate(s).
 	inferred   1 Finite State Machine(s).
 Unit <mojo_top_0> synthesized.
@@ -219,8 +219,8 @@ Unit <counter_8> synthesized.
 Synthesizing Unit <stateCounter_3>.
     Related source file is "C:/Users/User/Documents/1d compstruct/properwork2/work/planAhead/properwork2/properwork2.srcs/sources_1/imports/verilog/stateCounter_3.v".
     Found 22-bit register for signal <M_stateCounter2_q>.
-    Found 21-bit register for signal <M_stateCounter3_q>.
     Found 23-bit register for signal <M_stateCounter1_q>.
+    Found 21-bit register for signal <M_stateCounter3_q>.
     Found 23-bit adder for signal <M_stateCounter1_d> created at line 29.
     Found 22-bit adder for signal <M_stateCounter2_d> created at line 34.
     Found 21-bit adder for signal <M_stateCounter3_d> created at line 39.
@@ -351,11 +351,11 @@ Macro Statistics
  4-bit register                                        : 4
 # Comparators                                          : 1
  16-bit comparator greater                             : 1
-# Multiplexers                                         : 81
+# Multiplexers                                         : 85
  1-bit 2-to-1 multiplexer                              : 7
  1-bit 4-to-1 multiplexer                              : 17
  16-bit 14-to-1 multiplexer                            : 1
- 16-bit 2-to-1 multiplexer                             : 17
+ 16-bit 2-to-1 multiplexer                             : 21
  16-bit 4-to-1 multiplexer                             : 2
  32-bit 2-to-1 multiplexer                             : 4
  4-bit 2-to-1 multiplexer                              : 32
@@ -385,8 +385,8 @@ The following registers are absorbed into counter <M_ctr_q>: 1 register on signa
 Unit <counter_8> synthesized (advanced).
 
 Synthesizing (advanced) Unit <mojo_top_0>.
-The following registers are absorbed into counter <M_rngCounter_q>: 1 register on signal <M_rngCounter_q>.
 The following registers are absorbed into counter <M_val_q>: 1 register on signal <M_val_q>.
+The following registers are absorbed into counter <M_rngCounter_q>: 1 register on signal <M_rngCounter_q>.
 Unit <mojo_top_0> synthesized (advanced).
 
 Synthesizing (advanced) Unit <multi_seven_seg_2>.
@@ -435,11 +435,11 @@ Macro Statistics
  Flip-Flops                                            : 227
 # Comparators                                          : 1
  16-bit comparator greater                             : 1
-# Multiplexers                                         : 80
+# Multiplexers                                         : 83
  1-bit 2-to-1 multiplexer                              : 7
  1-bit 4-to-1 multiplexer                              : 17
  16-bit 14-to-1 multiplexer                            : 1
- 16-bit 2-to-1 multiplexer                             : 16
+ 16-bit 2-to-1 multiplexer                             : 19
  16-bit 4-to-1 multiplexer                             : 2
  32-bit 2-to-1 multiplexer                             : 4
  4-bit 2-to-1 multiplexer                              : 32
@@ -496,37 +496,37 @@ Optimizing unit <alu_5> ...
 Optimizing unit <adder_9> ...
 
 Optimizing unit <multiply_13> ...
-INFO:Xst:2261 - The FF/Latch <sc/M_stateCounter2_q_20> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <sc/M_stateCounter1_q_20> 
-INFO:Xst:2261 - The FF/Latch <seg/M_sel_val_q_0> in Unit <mojo_top_0> is equivalent to the following 3 FFs/Latches, which will be removed : <sc/M_stateCounter3_q_18> <sc/M_stateCounter2_q_18> <sc/M_stateCounter1_q_18> 
-INFO:Xst:2261 - The FF/Latch <seg/M_sel_val_q_1> in Unit <mojo_top_0> is equivalent to the following 3 FFs/Latches, which will be removed : <sc/M_stateCounter3_q_19> <sc/M_stateCounter2_q_19> <sc/M_stateCounter1_q_19> 
-INFO:Xst:2261 - The FF/Latch <seg/c/M_ctr_q_0> in Unit <mojo_top_0> is equivalent to the following 3 FFs/Latches, which will be removed : <sc/M_stateCounter3_q_0> <sc/M_stateCounter2_q_0> <sc/M_stateCounter1_q_0> 
-INFO:Xst:2261 - The FF/Latch <seg/c/M_ctr_q_1> in Unit <mojo_top_0> is equivalent to the following 3 FFs/Latches, which will be removed : <sc/M_stateCounter3_q_1> <sc/M_stateCounter2_q_1> <sc/M_stateCounter1_q_1> 
-INFO:Xst:2261 - The FF/Latch <seg/c/M_ctr_q_2> in Unit <mojo_top_0> is equivalent to the following 3 FFs/Latches, which will be removed : <sc/M_stateCounter3_q_2> <sc/M_stateCounter2_q_2> <sc/M_stateCounter1_q_2> 
-INFO:Xst:2261 - The FF/Latch <seg/c/M_ctr_q_3> in Unit <mojo_top_0> is equivalent to the following 3 FFs/Latches, which will be removed : <sc/M_stateCounter3_q_3> <sc/M_stateCounter2_q_3> <sc/M_stateCounter1_q_3> 
-INFO:Xst:2261 - The FF/Latch <seg/c/M_ctr_q_4> in Unit <mojo_top_0> is equivalent to the following 3 FFs/Latches, which will be removed : <sc/M_stateCounter3_q_4> <sc/M_stateCounter2_q_4> <sc/M_stateCounter1_q_4> 
-INFO:Xst:2261 - The FF/Latch <seg/c/M_ctr_q_5> in Unit <mojo_top_0> is equivalent to the following 3 FFs/Latches, which will be removed : <sc/M_stateCounter3_q_5> <sc/M_stateCounter2_q_5> <sc/M_stateCounter1_q_5> 
-INFO:Xst:2261 - The FF/Latch <seg/c/M_ctr_q_6> in Unit <mojo_top_0> is equivalent to the following 3 FFs/Latches, which will be removed : <sc/M_stateCounter3_q_6> <sc/M_stateCounter2_q_6> <sc/M_stateCounter1_q_6> 
-INFO:Xst:2261 - The FF/Latch <seg/c/M_ctr_q_7> in Unit <mojo_top_0> is equivalent to the following 3 FFs/Latches, which will be removed : <sc/M_stateCounter3_q_7> <sc/M_stateCounter2_q_7> <sc/M_stateCounter1_q_7> 
-INFO:Xst:2261 - The FF/Latch <seg/c/M_ctr_q_10> in Unit <mojo_top_0> is equivalent to the following 3 FFs/Latches, which will be removed : <sc/M_stateCounter3_q_10> <sc/M_stateCounter2_q_10> <sc/M_stateCounter1_q_10> 
-INFO:Xst:2261 - The FF/Latch <seg/c/M_ctr_q_8> in Unit <mojo_top_0> is equivalent to the following 3 FFs/Latches, which will be removed : <sc/M_stateCounter3_q_8> <sc/M_stateCounter2_q_8> <sc/M_stateCounter1_q_8> 
-INFO:Xst:2261 - The FF/Latch <seg/c/M_ctr_q_11> in Unit <mojo_top_0> is equivalent to the following 3 FFs/Latches, which will be removed : <sc/M_stateCounter3_q_11> <sc/M_stateCounter2_q_11> <sc/M_stateCounter1_q_11> 
-INFO:Xst:2261 - The FF/Latch <seg/c/M_ctr_q_9> in Unit <mojo_top_0> is equivalent to the following 3 FFs/Latches, which will be removed : <sc/M_stateCounter3_q_9> <sc/M_stateCounter2_q_9> <sc/M_stateCounter1_q_9> 
-INFO:Xst:2261 - The FF/Latch <seg/c/M_ctr_q_12> in Unit <mojo_top_0> is equivalent to the following 3 FFs/Latches, which will be removed : <sc/M_stateCounter3_q_12> <sc/M_stateCounter2_q_12> <sc/M_stateCounter1_q_12> 
-INFO:Xst:2261 - The FF/Latch <seg/c/M_ctr_q_13> in Unit <mojo_top_0> is equivalent to the following 3 FFs/Latches, which will be removed : <sc/M_stateCounter3_q_13> <sc/M_stateCounter2_q_13> <sc/M_stateCounter1_q_13> 
-INFO:Xst:2261 - The FF/Latch <seg/c/M_ctr_q_14> in Unit <mojo_top_0> is equivalent to the following 3 FFs/Latches, which will be removed : <sc/M_stateCounter3_q_14> <sc/M_stateCounter2_q_14> <sc/M_stateCounter1_q_14> 
-INFO:Xst:2261 - The FF/Latch <seg/c/M_ctr_q_15> in Unit <mojo_top_0> is equivalent to the following 3 FFs/Latches, which will be removed : <sc/M_stateCounter3_q_15> <sc/M_stateCounter2_q_15> <sc/M_stateCounter1_q_15> 
-INFO:Xst:2261 - The FF/Latch <seg/c/M_ctr_q_16> in Unit <mojo_top_0> is equivalent to the following 3 FFs/Latches, which will be removed : <sc/M_stateCounter3_q_16> <sc/M_stateCounter2_q_16> <sc/M_stateCounter1_q_16> 
-INFO:Xst:2261 - The FF/Latch <seg/c/M_ctr_q_17> in Unit <mojo_top_0> is equivalent to the following 3 FFs/Latches, which will be removed : <sc/M_stateCounter3_q_17> <sc/M_stateCounter2_q_17> <sc/M_stateCounter1_q_17> 
+INFO:Xst:2261 - The FF/Latch <seg/M_sel_val_q_0> in Unit <mojo_top_0> is equivalent to the following 3 FFs/Latches, which will be removed : <sc/M_stateCounter1_q_18> <sc/M_stateCounter2_q_18> <sc/M_stateCounter3_q_18> 
+INFO:Xst:2261 - The FF/Latch <seg/M_sel_val_q_1> in Unit <mojo_top_0> is equivalent to the following 3 FFs/Latches, which will be removed : <sc/M_stateCounter1_q_19> <sc/M_stateCounter2_q_19> <sc/M_stateCounter3_q_19> 
+INFO:Xst:2261 - The FF/Latch <seg/c/M_ctr_q_0> in Unit <mojo_top_0> is equivalent to the following 3 FFs/Latches, which will be removed : <sc/M_stateCounter1_q_0> <sc/M_stateCounter2_q_0> <sc/M_stateCounter3_q_0> 
+INFO:Xst:2261 - The FF/Latch <seg/c/M_ctr_q_1> in Unit <mojo_top_0> is equivalent to the following 3 FFs/Latches, which will be removed : <sc/M_stateCounter1_q_1> <sc/M_stateCounter2_q_1> <sc/M_stateCounter3_q_1> 
+INFO:Xst:2261 - The FF/Latch <seg/c/M_ctr_q_2> in Unit <mojo_top_0> is equivalent to the following 3 FFs/Latches, which will be removed : <sc/M_stateCounter1_q_2> <sc/M_stateCounter2_q_2> <sc/M_stateCounter3_q_2> 
+INFO:Xst:2261 - The FF/Latch <seg/c/M_ctr_q_3> in Unit <mojo_top_0> is equivalent to the following 3 FFs/Latches, which will be removed : <sc/M_stateCounter1_q_3> <sc/M_stateCounter2_q_3> <sc/M_stateCounter3_q_3> 
+INFO:Xst:2261 - The FF/Latch <seg/c/M_ctr_q_4> in Unit <mojo_top_0> is equivalent to the following 3 FFs/Latches, which will be removed : <sc/M_stateCounter1_q_4> <sc/M_stateCounter2_q_4> <sc/M_stateCounter3_q_4> 
+INFO:Xst:2261 - The FF/Latch <seg/c/M_ctr_q_5> in Unit <mojo_top_0> is equivalent to the following 3 FFs/Latches, which will be removed : <sc/M_stateCounter1_q_5> <sc/M_stateCounter2_q_5> <sc/M_stateCounter3_q_5> 
+INFO:Xst:2261 - The FF/Latch <seg/c/M_ctr_q_6> in Unit <mojo_top_0> is equivalent to the following 3 FFs/Latches, which will be removed : <sc/M_stateCounter1_q_6> <sc/M_stateCounter2_q_6> <sc/M_stateCounter3_q_6> 
+INFO:Xst:2261 - The FF/Latch <seg/c/M_ctr_q_7> in Unit <mojo_top_0> is equivalent to the following 3 FFs/Latches, which will be removed : <sc/M_stateCounter1_q_7> <sc/M_stateCounter2_q_7> <sc/M_stateCounter3_q_7> 
+INFO:Xst:2261 - The FF/Latch <seg/c/M_ctr_q_10> in Unit <mojo_top_0> is equivalent to the following 3 FFs/Latches, which will be removed : <sc/M_stateCounter1_q_10> <sc/M_stateCounter2_q_10> <sc/M_stateCounter3_q_10> 
+INFO:Xst:2261 - The FF/Latch <seg/c/M_ctr_q_8> in Unit <mojo_top_0> is equivalent to the following 3 FFs/Latches, which will be removed : <sc/M_stateCounter1_q_8> <sc/M_stateCounter2_q_8> <sc/M_stateCounter3_q_8> 
+INFO:Xst:2261 - The FF/Latch <seg/c/M_ctr_q_11> in Unit <mojo_top_0> is equivalent to the following 3 FFs/Latches, which will be removed : <sc/M_stateCounter1_q_11> <sc/M_stateCounter2_q_11> <sc/M_stateCounter3_q_11> 
+INFO:Xst:2261 - The FF/Latch <seg/c/M_ctr_q_9> in Unit <mojo_top_0> is equivalent to the following 3 FFs/Latches, which will be removed : <sc/M_stateCounter1_q_9> <sc/M_stateCounter2_q_9> <sc/M_stateCounter3_q_9> 
+INFO:Xst:2261 - The FF/Latch <seg/c/M_ctr_q_12> in Unit <mojo_top_0> is equivalent to the following 3 FFs/Latches, which will be removed : <sc/M_stateCounter1_q_12> <sc/M_stateCounter2_q_12> <sc/M_stateCounter3_q_12> 
+INFO:Xst:2261 - The FF/Latch <seg/c/M_ctr_q_13> in Unit <mojo_top_0> is equivalent to the following 3 FFs/Latches, which will be removed : <sc/M_stateCounter1_q_13> <sc/M_stateCounter2_q_13> <sc/M_stateCounter3_q_13> 
+INFO:Xst:2261 - The FF/Latch <seg/c/M_ctr_q_14> in Unit <mojo_top_0> is equivalent to the following 3 FFs/Latches, which will be removed : <sc/M_stateCounter1_q_14> <sc/M_stateCounter2_q_14> <sc/M_stateCounter3_q_14> 
+INFO:Xst:2261 - The FF/Latch <seg/c/M_ctr_q_15> in Unit <mojo_top_0> is equivalent to the following 3 FFs/Latches, which will be removed : <sc/M_stateCounter1_q_15> <sc/M_stateCounter2_q_15> <sc/M_stateCounter3_q_15> 
+INFO:Xst:2261 - The FF/Latch <seg/c/M_ctr_q_16> in Unit <mojo_top_0> is equivalent to the following 3 FFs/Latches, which will be removed : <sc/M_stateCounter1_q_16> <sc/M_stateCounter2_q_16> <sc/M_stateCounter3_q_16> 
+INFO:Xst:2261 - The FF/Latch <seg/c/M_ctr_q_17> in Unit <mojo_top_0> is equivalent to the following 3 FFs/Latches, which will be removed : <sc/M_stateCounter1_q_17> <sc/M_stateCounter2_q_17> <sc/M_stateCounter3_q_17> 
+INFO:Xst:2261 - The FF/Latch <sc/M_stateCounter1_q_20> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <sc/M_stateCounter2_q_20> 
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 0) on block mojo_top_0, actual ratio is 10.
+Found area constraint ratio of 100 (+ 0) on block mojo_top_0, actual ratio is 11.
 WARNING:Xst:1426 - The value init of the FF/Latch rng/M_initd_q hinder the constant cleaning in the block mojo_top_0.
    You should achieve better results by setting this init to 1.
-FlipFlop M_state_q_FSM_FFd1 has been replicated 2 time(s)
+FlipFlop M_state_q_FSM_FFd1 has been replicated 3 time(s)
 FlipFlop M_state_q_FSM_FFd2 has been replicated 3 time(s)
-FlipFlop M_state_q_FSM_FFd3 has been replicated 3 time(s)
-FlipFlop M_state_q_FSM_FFd4 has been replicated 2 time(s)
+FlipFlop M_state_q_FSM_FFd3 has been replicated 2 time(s)
+FlipFlop M_state_q_FSM_FFd4 has been replicated 3 time(s)
 
 Final Macro Processing ...
 
@@ -538,8 +538,8 @@ Unit <mojo_top_0> processed.
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 231
- Flip-Flops                                            : 231
+# Registers                                            : 232
+ Flip-Flops                                            : 232
 
 =========================================================================
 
@@ -562,22 +562,22 @@ Top Level Output File Name         : mojo_top_0.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 752
+# BELS                             : 755
 #      GND                         : 6
 #      INV                         : 12
-#      LUT1                        : 95
-#      LUT2                        : 108
-#      LUT3                        : 48
-#      LUT4                        : 80
-#      LUT5                        : 61
-#      LUT6                        : 106
+#      LUT1                        : 80
+#      LUT2                        : 107
+#      LUT3                        : 66
+#      LUT4                        : 83
+#      LUT5                        : 53
+#      LUT6                        : 111
 #      MUXCY                       : 140
-#      MUXF7                       : 4
+#      MUXF7                       : 5
 #      VCC                         : 5
 #      XORCY                       : 87
-# FlipFlops/Latches                : 231
+# FlipFlops/Latches                : 232
 #      FD                          : 129
-#      FDR                         : 57
+#      FDR                         : 58
 #      FDRE                        : 41
 #      FDS                         : 4
 # Clock Buffers                    : 1
@@ -594,15 +594,15 @@ Selected Device : 6slx9tqg144-2
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             231  out of  11440     2%  
- Number of Slice LUTs:                  510  out of   5720     8%  
-    Number used as Logic:               510  out of   5720     8%  
+ Number of Slice Registers:             232  out of  11440     2%  
+ Number of Slice LUTs:                  512  out of   5720     8%  
+    Number used as Logic:               512  out of   5720     8%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    565
-   Number with an unused Flip Flop:     334  out of    565    59%  
-   Number with an unused LUT:            55  out of    565     9%  
-   Number of fully used LUT-FF pairs:   176  out of    565    31%  
+ Number of LUT Flip Flop pairs used:    553
+   Number with an unused Flip Flop:     321  out of    553    58%  
+   Number with an unused LUT:            41  out of    553     7%  
+   Number of fully used LUT-FF pairs:   191  out of    553    34%  
    Number of unique control sets:        10
 
 IO Utilization: 
@@ -633,7 +633,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 231   |
+clk                                | BUFGP                  | 232   |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -644,10 +644,10 @@ Timing Summary:
 ---------------
 Speed Grade: -2
 
-   Minimum period: 10.826ns (Maximum Frequency: 92.370MHz)
-   Minimum input arrival time before clock: 12.675ns
+   Minimum period: 11.483ns (Maximum Frequency: 87.089MHz)
+   Minimum input arrival time before clock: 12.993ns
    Maximum output required time after clock: 7.503ns
-   Maximum combinational path delay: 5.926ns
+   Maximum combinational path delay: 5.474ns
 
 Timing Details:
 ---------------
@@ -655,49 +655,46 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 10.826ns (frequency: 92.370MHz)
-  Total number of paths / destination ports: 458123 / 368
+  Clock period: 11.483ns (frequency: 87.089MHz)
+  Total number of paths / destination ports: 556192 / 370
 -------------------------------------------------------------------------
-Delay:               10.826ns (Levels of Logic = 17)
-  Source:            sc/M_stateCounter2_q_21 (FF)
+Delay:               11.483ns (Levels of Logic = 14)
+  Source:            M_state_q_FSM_FFd2_1 (FF)
   Destination:       M_rngCounter_q_0 (FF)
   Source Clock:      clk rising
   Destination Clock: clk rising
 
-  Data Path: sc/M_stateCounter2_q_21 to M_rngCounter_q_0
+  Data Path: M_state_q_FSM_FFd2_1 to M_rngCounter_q_0
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDR:C->Q              6   0.525   1.104  M_stateCounter2_q_21 (M_stateCounter2_q_21)
-     end scope: 'sc:inc_state2'
-     LUT5:I2->O            4   0.235   0.804  Mmux_myCounter11_1 (Mmux_myCounter11)
-     LUT5:I4->O            6   0.254   1.104  M_state_q<3>1011_1 (M_state_q<3>1011)
-     begin scope: 'alumod:M_state_q<3>1011'
-     begin scope: 'alumod/add:M_state_q<3>1011'
-     LUT5:I2->O            1   0.235   0.000  Msub_a[15]_b[15]_sub_2_OUT_lut<0> (Msub_a[15]_b[15]_sub_2_OUT_lut<0>)
-     MUXCY:S->O            1   0.215   0.000  Msub_a[15]_b[15]_sub_2_OUT_cy<0> (Msub_a[15]_b[15]_sub_2_OUT_cy<0>)
-     MUXCY:CI->O           1   0.023   0.000  Msub_a[15]_b[15]_sub_2_OUT_cy<1> (Msub_a[15]_b[15]_sub_2_OUT_cy<1>)
-     MUXCY:CI->O           1   0.023   0.000  Msub_a[15]_b[15]_sub_2_OUT_cy<2> (Msub_a[15]_b[15]_sub_2_OUT_cy<2>)
+     FDR:C->Q              1   0.525   0.958  M_state_q_FSM_FFd2_1 (M_state_q_FSM_FFd2_1)
+     LUT5:I1->O            3   0.254   0.766  Mmux_M_alumod_a181_SW0 (N21)
+     LUT6:I5->O           10   0.254   1.116  Mmux_M_alumod_a181_1 (Mmux_M_alumod_a181)
+     LUT4:I2->O            6   0.250   0.875  Mmux_M_alumod_a91 (M_alumod_a<2>)
+     begin scope: 'alumod:a<2>'
+     begin scope: 'alumod/add:a<2>'
+     MUXCY:DI->O           1   0.181   0.000  Msub_a[15]_b[15]_sub_2_OUT_cy<2> (Msub_a[15]_b[15]_sub_2_OUT_cy<2>)
      MUXCY:CI->O           1   0.023   0.000  Msub_a[15]_b[15]_sub_2_OUT_cy<3> (Msub_a[15]_b[15]_sub_2_OUT_cy<3>)
      MUXCY:CI->O           1   0.023   0.000  Msub_a[15]_b[15]_sub_2_OUT_cy<4> (Msub_a[15]_b[15]_sub_2_OUT_cy<4>)
      XORCY:CI->O           2   0.206   1.181  Msub_a[15]_b[15]_sub_2_OUT_xor<5> (a[15]_b[15]_sub_2_OUT<5>)
      LUT6:I0->O            1   0.254   0.790  z1 (z)
-     LUT6:I4->O            1   0.250   0.682  z7_SW3 (N111)
-     end scope: 'alumod/add:N111'
+     LUT6:I4->O            1   0.250   0.682  z7_SW3 (N34)
+     end scope: 'alumod/add:N34'
      LUT6:I5->O            6   0.254   0.876  alufn<5>1 (alu<0>)
      end scope: 'alumod:alu<0>'
-     LUT6:I5->O           16   0.254   1.182  _n0704_inv (_n0704_inv)
+     LUT6:I5->O           16   0.254   1.182  _n0751_inv (_n0751_inv)
      LUT3:I2->O            1   0.254   0.000  M_rngCounter_q_0_rstpot (M_rngCounter_q_0_rstpot)
      FDR:D                     0.074          M_rngCounter_q_0
     ----------------------------------------
-    Total                     10.826ns (3.103ns logic, 7.723ns route)
-                                       (28.7% logic, 71.3% route)
+    Total                     11.483ns (3.057ns logic, 8.426ns route)
+                                       (26.6% logic, 73.4% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 144693 / 82
+  Total number of paths / destination ports: 178248 / 83
 -------------------------------------------------------------------------
-Offset:              12.675ns (Levels of Logic = 17)
+Offset:              12.993ns (Levels of Logic = 15)
   Source:            io_button<0> (PAD)
   Destination:       M_rngCounter_q_0 (FF)
   Destination Clock: clk rising
@@ -706,33 +703,31 @@ Offset:              12.675ns (Levels of Logic = 17)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O            42   1.328   2.142  io_button_0_IBUF (led_0_OBUF)
-     LUT6:I0->O            3   0.254   0.766  GND_1_o_GND_1_o_mux_176_OUT<1>1 (GND_1_o_GND_1_o_mux_176_OUT<1>)
-     LUT5:I4->O           10   0.254   1.116  M_state_q<3>11 (M_alumod_b<0>)
-     begin scope: 'alumod:b<0>'
-     begin scope: 'alumod/add:b<0>'
-     LUT5:I3->O            1   0.250   0.000  Msub_a[15]_b[15]_sub_2_OUT_lut<0> (Msub_a[15]_b[15]_sub_2_OUT_lut<0>)
-     MUXCY:S->O            1   0.215   0.000  Msub_a[15]_b[15]_sub_2_OUT_cy<0> (Msub_a[15]_b[15]_sub_2_OUT_cy<0>)
-     MUXCY:CI->O           1   0.023   0.000  Msub_a[15]_b[15]_sub_2_OUT_cy<1> (Msub_a[15]_b[15]_sub_2_OUT_cy<1>)
-     MUXCY:CI->O           1   0.023   0.000  Msub_a[15]_b[15]_sub_2_OUT_cy<2> (Msub_a[15]_b[15]_sub_2_OUT_cy<2>)
+     IBUF:I->O            18   1.328   1.665  io_button_0_IBUF (led_0_OBUF)
+     LUT5:I0->O            3   0.254   0.766  Mmux_M_alumod_a181_SW0 (N21)
+     LUT6:I5->O           10   0.254   1.116  Mmux_M_alumod_a181_1 (Mmux_M_alumod_a181)
+     LUT4:I2->O            6   0.250   0.875  Mmux_M_alumod_a91 (M_alumod_a<2>)
+     begin scope: 'alumod:a<2>'
+     begin scope: 'alumod/add:a<2>'
+     MUXCY:DI->O           1   0.181   0.000  Msub_a[15]_b[15]_sub_2_OUT_cy<2> (Msub_a[15]_b[15]_sub_2_OUT_cy<2>)
      MUXCY:CI->O           1   0.023   0.000  Msub_a[15]_b[15]_sub_2_OUT_cy<3> (Msub_a[15]_b[15]_sub_2_OUT_cy<3>)
      MUXCY:CI->O           1   0.023   0.000  Msub_a[15]_b[15]_sub_2_OUT_cy<4> (Msub_a[15]_b[15]_sub_2_OUT_cy<4>)
      XORCY:CI->O           2   0.206   1.181  Msub_a[15]_b[15]_sub_2_OUT_xor<5> (a[15]_b[15]_sub_2_OUT<5>)
      LUT6:I0->O            1   0.254   0.790  z1 (z)
-     LUT6:I4->O            1   0.250   0.682  z7_SW3 (N111)
-     end scope: 'alumod/add:N111'
+     LUT6:I4->O            1   0.250   0.682  z7_SW3 (N34)
+     end scope: 'alumod/add:N34'
      LUT6:I5->O            6   0.254   0.876  alufn<5>1 (alu<0>)
      end scope: 'alumod:alu<0>'
-     LUT6:I5->O           16   0.254   1.182  _n0704_inv (_n0704_inv)
+     LUT6:I5->O           16   0.254   1.182  _n0751_inv (_n0751_inv)
      LUT3:I2->O            1   0.254   0.000  M_rngCounter_q_0_rstpot (M_rngCounter_q_0_rstpot)
      FDR:D                     0.074          M_rngCounter_q_0
     ----------------------------------------
-    Total                     12.675ns (3.940ns logic, 8.735ns route)
-                                       (31.1% logic, 68.9% route)
+    Total                     12.993ns (3.860ns logic, 9.133ns route)
+                                       (29.7% logic, 70.3% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
-  Total number of paths / destination ports: 177 / 35
+  Total number of paths / destination ports: 169 / 32
 -------------------------------------------------------------------------
 Offset:              7.503ns (Levels of Logic = 5)
   Source:            seg/M_sel_val_q_0 (FF)
@@ -758,7 +753,7 @@ Offset:              7.503ns (Levels of Logic = 5)
 Timing constraint: Default path analysis
   Total number of paths / destination ports: 5 / 5
 -------------------------------------------------------------------------
-Delay:               5.926ns (Levels of Logic = 2)
+Delay:               5.474ns (Levels of Logic = 2)
   Source:            io_button<0> (PAD)
   Destination:       led<0> (PAD)
 
@@ -766,11 +761,11 @@ Delay:               5.926ns (Levels of Logic = 2)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O            42   1.328   1.686  io_button_0_IBUF (led_0_OBUF)
+     IBUF:I->O            18   1.328   1.234  io_button_0_IBUF (led_0_OBUF)
      OBUF:I->O                 2.912          led_0_OBUF (led<0>)
     ----------------------------------------
-    Total                      5.926ns (4.240ns logic, 1.686ns route)
-                                       (71.5% logic, 28.5% route)
+    Total                      5.474ns (4.240ns logic, 1.234ns route)
+                                       (77.5% logic, 22.5% route)
 
 =========================================================================
 
@@ -782,14 +777,14 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |   10.826|         |         |         |
+clk            |   11.483|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
 Total REAL time to Xst completion: 11.00 secs
-Total CPU time to Xst completion: 11.05 secs
+Total CPU time to Xst completion: 10.71 secs
  
 --> 
 

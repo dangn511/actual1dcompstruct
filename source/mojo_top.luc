@@ -35,7 +35,7 @@ module mojo_top (
   .clk(clk) {
     reset_conditioner reset_cond;
     .rst(rst) {
-      fsm state = {BEGIN, PREIDLE, IDLE, TESTCASE1, TESTCASE2, TESTCASE3, TESTCASE4, TESTCASE5, TESTCASE6, TESTCASE7, TESTCASE8, TESTCASE9, TESTCASE10, POSTPROC, HALT};
+      fsm state = {BEGIN, PREIDLE, IDLE, TESTCASE1, TESTCASE2, TESTCASE3, TESTCASE4, TESTCASE5, TESTCASE6, TESTCASE7, TESTCASE8, TESTCASE9, TESTCASE10, POSTPROC, HALT1, HALT2};
       multi_seven_seg seg;
       stateCounter sc;
       dff val[16];
@@ -274,21 +274,21 @@ module mojo_top (
         //this is a dirty fix
       state.PREIDLE:
         
-        if (myCounter == 1) {
+        if (myCounter == 1 && io_button[0] == 0) {
         
           state.d = state.IDLE;
         }
   
       state.IDLE:
         
-        a = 16b0000010000000000;
+        a = 16b0001010000000000;
         //if (myCounter == 1)
         if (io_button[0]) {
           state.d = state.POSTPROC;
           }
         if (rng.num < 16h1)
         { rngCounter.d = rngCounter.q + 1;
-        if (rngCounter.q == 500) {
+        if (rngCounter.q == 4000) {
            
           state.d = state.TESTCASE1;
         } else {
@@ -471,7 +471,7 @@ module mojo_top (
           
  
         if (alumod.alu) {
-          state.d = state.HALT;
+          state.d = state.HALT1;
           
         } else {
           rngCounter.d = 0;
@@ -479,9 +479,15 @@ module mojo_top (
         }
         }
         
-      state.HALT:
-        a = 16b1111111111111111;
+      state.HALT1:
+        a = 16b0000001111111111;
         
+        if (io_button[2]) {
+          val.d = 0;
+          scoref.d = 0;
+          rngCounter.d = 0;
+          state.d = state.BEGIN;
+        }
         
         
       }

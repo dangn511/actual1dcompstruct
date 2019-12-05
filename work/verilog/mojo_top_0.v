@@ -51,7 +51,8 @@ module mojo_top_0 (
   localparam TESTCASE9_state = 4'd11;
   localparam TESTCASE10_state = 4'd12;
   localparam POSTPROC_state = 4'd13;
-  localparam HALT_state = 4'd14;
+  localparam HALT1_state = 4'd14;
+  localparam HALT2_state = 4'd15;
   
   reg [3:0] M_state_d, M_state_q = BEGIN_state;
   wire [7-1:0] M_seg_seg;
@@ -411,18 +412,18 @@ module mojo_top_0 (
         end
       end
       PREIDLE_state: begin
-        if (myCounter == 1'h1) begin
+        if (myCounter == 1'h1 && io_button[0+0-:1] == 1'h0) begin
           M_state_d = IDLE_state;
         end
       end
       IDLE_state: begin
-        a = 16'h0400;
+        a = 16'h1400;
         if (io_button[0+0-:1]) begin
           M_state_d = POSTPROC_state;
         end
         if (M_rng_num < 16'h0001) begin
           M_rngCounter_d = M_rngCounter_q + 1'h1;
-          if (M_rngCounter_q == 9'h1f4) begin
+          if (M_rngCounter_q == 12'hfa0) begin
             M_state_d = TESTCASE1_state;
           end else begin
             M_state_d = IDLE_state;
@@ -579,15 +580,21 @@ module mojo_top_0 (
           M_alumod_a = M_val_q;
           M_alumod_b = 3'h4;
           if (M_alumod_alu) begin
-            M_state_d = HALT_state;
+            M_state_d = HALT1_state;
           end else begin
             M_rngCounter_d = 1'h0;
             M_state_d = PREIDLE_state;
           end
         end
       end
-      HALT_state: begin
-        a = 16'hffff;
+      HALT1_state: begin
+        a = 16'h03ff;
+        if (io_button[2+0-:1]) begin
+          M_val_d = 1'h0;
+          M_scoref_d = 1'h0;
+          M_rngCounter_d = 1'h0;
+          M_state_d = BEGIN_state;
+        end
       end
     endcase
     io_led[8+15-:16] = {{a[8+7-:8]}, {a[0+7-:8]}};

@@ -1,7 +1,7 @@
 Release 14.7 par P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-DESKTOP-GSTN4U4::  Wed Dec 04 05:43:17 2019
+DESKTOP-GSTN4U4::  Thu Dec 05 13:48:41 2019
 
 par -intstyle pa -w -mt on mojo_top_0.ncd mojo_top_0_routed.ncd 
 
@@ -21,30 +21,30 @@ Device speed data version:  "PRODUCTION 1.23 2013-10-13".
 Device Utilization Summary:
 
 Slice Logic Utilization:
-  Number of Slice Registers:                   231 out of  11,440    2%
-    Number used as Flip Flops:                 231
+  Number of Slice Registers:                   232 out of  11,440    2%
+    Number used as Flip Flops:                 232
     Number used as Latches:                      0
     Number used as Latch-thrus:                  0
     Number used as AND/OR logics:                0
-  Number of Slice LUTs:                        398 out of   5,720    6%
-    Number used as logic:                      392 out of   5,720    6%
+  Number of Slice LUTs:                        400 out of   5,720    6%
+    Number used as logic:                      395 out of   5,720    6%
       Number using O6 output only:             214
-      Number using O5 output only:              90
-      Number using O5 and O6:                   88
+      Number using O5 output only:              76
+      Number using O5 and O6:                  105
       Number used as ROM:                        0
     Number used as Memory:                       0 out of   1,440    0%
-    Number used exclusively as route-thrus:      6
+    Number used exclusively as route-thrus:      5
       Number with same-slice register load:      1
-      Number with same-slice carry load:         5
+      Number with same-slice carry load:         4
       Number with other load:                    0
 
 Slice Logic Distribution:
-  Number of occupied Slices:                   124 out of   1,430    8%
+  Number of occupied Slices:                   128 out of   1,430    8%
   Number of MUXCYs used:                       156 out of   2,860    5%
-  Number of LUT Flip Flop pairs used:          401
-    Number with an unused Flip Flop:           229 out of     401   57%
-    Number with an unused LUT:                   3 out of     401    1%
-    Number of fully used LUT-FF pairs:         169 out of     401   42%
+  Number of LUT Flip Flop pairs used:          408
+    Number with an unused Flip Flop:           236 out of     408   57%
+    Number with an unused LUT:                   8 out of     408    1%
+    Number of fully used LUT-FF pairs:         164 out of     408   40%
     Number of slice register sites lost
       to control set restrictions:               0 out of  11,440    0%
 
@@ -119,13 +119,13 @@ WARNING:Par:288 - The signal spi_mosi_IBUF has no load.  PAR will not attempt to
 Starting Multi-threaded Router
 
 
-Phase  1  : 1799 unrouted;      REAL time: 4 secs 
+Phase  1  : 1818 unrouted;      REAL time: 4 secs 
 
-Phase  2  : 1565 unrouted;      REAL time: 4 secs 
+Phase  2  : 1584 unrouted;      REAL time: 4 secs 
 
-Phase  3  : 632 unrouted;      REAL time: 5 secs 
+Phase  3  : 768 unrouted;      REAL time: 5 secs 
 
-Phase  4  : 632 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 5 secs 
+Phase  4  : 768 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 5 secs 
 
 Updating file: mojo_top_0_routed.ncd with current fully routed design.
 
@@ -152,7 +152,7 @@ Generating Clock Report
 +---------------------+--------------+------+------+------------+-------------+
 |        Clock Net    |   Resource   |Locked|Fanout|Net Skew(ns)|Max Delay(ns)|
 +---------------------+--------------+------+------+------------+-------------+
-|           clk_BUFGP | BUFGMUX_X2Y11| No   |   53 |  0.119     |  1.509      |
+|           clk_BUFGP | BUFGMUX_X2Y11| No   |   50 |  0.113     |  1.511      |
 +---------------------+--------------+------+------+------------+-------------+
 
 * Net Skew is the difference between the minimum and maximum routing
@@ -172,8 +172,8 @@ Asterisk (*) preceding a constraint indicates it was not met.
   Constraint                                |    Check    | Worst Case |  Best Case | Timing |   Timing   
                                             |             |    Slack   | Achievable | Errors |    Score   
 ----------------------------------------------------------------------------------------------------------
-  TS_clk = PERIOD TIMEGRP "clk" 50 MHz HIGH | SETUP       |     7.020ns|    12.980ns|       0|           0
-   50%                                      | HOLD        |     0.408ns|            |       0|           0
+  TS_clk = PERIOD TIMEGRP "clk" 50 MHz HIGH | SETUP       |     7.985ns|    12.015ns|       0|           0
+   50%                                      | HOLD        |     0.416ns|            |       0|           0
 ----------------------------------------------------------------------------------------------------------
 
 

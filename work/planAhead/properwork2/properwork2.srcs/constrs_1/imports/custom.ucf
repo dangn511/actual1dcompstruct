@@ -1,0 +1,1 @@
+NET "rst_n" LOC = P32 | IOSTANDARD = LVTTL;
