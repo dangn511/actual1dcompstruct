@@ -35,12 +35,14 @@ module mojo_top (
   .clk(clk) {
     reset_conditioner reset_cond;
     .rst(rst) {
-      fsm state = {BEGIN, PREIDLE, IDLE, TESTCASE1, TESTCASE2, TESTCASE3, TESTCASE4, TESTCASE5, TESTCASE6, TESTCASE7, TESTCASE8, TESTCASE9, TESTCASE10, POSTPROC, HALT1, HALT2};
+      fsm state = {BEGIN, PREIDLE, IDLE, GAME, POSTPROC, HALT1, HALT2};
       multi_seven_seg seg;
       stateCounter sc;
       dff val[16];
       dff digit1[4];
       dff digit2[4];
+      dff gameDigits[16];
+      dff scoreRound[4];
     dff scoref[16];
     dff rngCounter[16];
       
@@ -99,7 +101,8 @@ module mojo_top (
     } else {
       myCounter = sc.inc_state2;
     }
-        //WARNING!!!
+    
+    //WARNING!!!
         //HARDCODE INCOMING
         //MAY SALVATION BE GRANTED TO MY SOUL
         //THERE IS NO DIVINITY BUT GOD
@@ -262,6 +265,7 @@ module mojo_top (
           {digit1.d = 0;
           digit2.d = 5;}
         
+        
 
     case (state.q) {
       state.BEGIN:
@@ -273,7 +277,8 @@ module mojo_top (
       
         //this is a dirty fix
       state.PREIDLE:
-        
+        scoreRound.d = 10;
+        gameDigits.d = 16b0000010000000000;
         if (myCounter == 1 && io_button[0] == 0) {
         
           state.d = state.IDLE;
@@ -290,172 +295,31 @@ module mojo_top (
         { rngCounter.d = rngCounter.q + 1;
         if (rngCounter.q == 4000) {
            
-          state.d = state.TESTCASE1;
+          state.d = state.GAME;
         } else {
           state.d = state.IDLE;
         }
         }
         
-      
-      // TEST CASE 1 : 000
-      state.TESTCASE1:
-      
-        a = 16b0000000000000001;
-        if (myCounter == 1)
-        { if (io_button[0]) {
-          alumod.alufn = 6b0;
-            alumod.a = scoref.q;
-            alumod.b = 10;
-            scoref.d = alumod.alu;
-          state.d = state.POSTPROC;
-          } else {
-          state.d = state.TESTCASE2;
-        }
-        }
-           
+      state.GAME:
+      if (myCounter) {
         
-        if (rst_n == 0) {
-          state.d = state.IDLE;
-        }
-
-   
-      // TEST CASE 2: score2
-      state.TESTCASE2:
-        a = 16b0000000000000010;
-        if (myCounter == 1)
-        { if (io_button[0]) {
-          alumod.alufn = 6b0;
-            alumod.a = scoref.q;
-            alumod.b = 9;
-            scoref.d = alumod.alu;
-          state.d = state.POSTPROC;
-          } else {
-          state.d = state.TESTCASE3;
-        }
-        }
-        
-      // TEST CASE 3: 010
-      state.TESTCASE3:
-        a = 16b0000000000000100;
-        if (myCounter == 1)
-        {if (io_button[0]) {
-        alumod.alufn = 6b0;
-            alumod.a = scoref.q;
-            alumod.b = 8;
-            scoref.d = alumod.alu;
-          state.d = state.POSTPROC;
-          } else {
-          state.d = state.TESTCASE4;
-        }
-        }
-        
-      // TEST CSE 4: 011 
-      state.TESTCASE4:
-        a = 16b0000000000001000;
-        if (myCounter == 1)
-        {if (io_button[0]) {
-        alumod.alufn = 6b0;
-            alumod.a = scoref.q;
-            alumod.b = 7;
-            scoref.d = alumod.alu;
-          state.d = state.POSTPROC;
-          } else {
-          state.d = state.TESTCASE5;
-        }
-        }
-     
-      // TEST CASE 5: 100
-      state.TESTCASE5:
-        a = 16b0000000000010000;
-        if (myCounter == 1)
-        {if (io_button[0]) {
-        alumod.alufn = 6b0;
-            alumod.a = scoref.q;
-            alumod.b = 6;
-            scoref.d = alumod.alu;
-          state.d = state.POSTPROC;
-          } else {
-          state.d = state.TESTCASE6;
-        }
-        }
-        
-       
-        
-     
-      // TEST CASE 6: 101
-      state.TESTCASE6:
-       a = 16b0000000000100000;
-        if (myCounter == 1)
-        {if (io_button[0]) {
-        alumod.alufn = 6b0;
-            alumod.a = scoref.q;
-            alumod.b = 5;
-            scoref.d = alumod.alu;
-          state.d = state.POSTPROC;
-          } else {
-          state.d = state.TESTCASE7;
-        }
-        }
-        
-      // TEST CASE 7: 110
-      state.TESTCASE7:
-        a = 16b0000000001000000;
-        if (myCounter == 1)
-        {if (io_button[0]) {
-        alumod.alufn = 6b0;
-            alumod.a = scoref.q;
-            alumod.b = 4;
-            scoref.d = alumod.alu;
-          state.d = state.POSTPROC;
-          } else {
-          state.d = state.TESTCASE8;
-        }
-        }
-        
-      // TEST CASE 8: 111
-      state.TESTCASE8:
-        a = 16b0000000010000000;
-        if (myCounter== 1)
-        {if (io_button[0]) {
-        alumod.alufn = 6b0;
-            alumod.a = scoref.q;
-            alumod.b = 3;
-            scoref.d = alumod.alu;
-          state.d = state.POSTPROC;
-          } else {
-          state.d = state.TESTCASE9;
-        }
-        }
-      
-       state.TESTCASE9:
-        a = 16b0000000100000000;
-        if (myCounter == 1)
-        {if (io_button[0]) {
-        alumod.alufn = 6b0;
-            alumod.a = scoref.q;
-            alumod.b = 2;
-            scoref.d = alumod.alu;
-          state.d = state.POSTPROC;
-          } else {
-          state.d = state.TESTCASE10;
-        }
-        }
-        
-        state.TESTCASE10:
-        a = 16b0000001000000000;
-        
-        if (myCounter == 1)
-        {if (io_button[0]) {
-        alumod.alufn = 6b0;
-            alumod.a = scoref.q;
+        if (scoreRound.q == 0) {
+          state.d = state.POSTPROC;}
+        else if( io_button[0]) {
+          scoref.d = scoref.q + scoreRound.q;
+          state.d = state.POSTPROC;}
+        else {
+          alumod.alufn = 6b100000; //SHL
+            alumod.a = gameDigits.q;
             alumod.b = 1;
-            scoref.d = alumod.alu;
-          state.d = state.POSTPROC;
-          } else {
-          state.d = state.POSTPROC;
-        }
-        }
+            gameDigits.d = alumod.alu;
+            scoreRound.d = scoreRound.q - 1;}
+            state.d = state.GAME;}
+            
         
+        
+              
       state.POSTPROC:
       
         if (myCounter == 1) {
